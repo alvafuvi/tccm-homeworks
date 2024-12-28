@@ -1,0 +1,76 @@
+	H2O
+===================
+
+Choose a TREXIO file:
+Nuclear repulsion energy = 9.194966 a.u. 
+Number of spin-up electrons: 5 
+Number of molecular orbitals: 24 
+Number of non-zero 2-electron integrals: 13458 
+Hartree-Fock energy = -76.026799 a.u. 
+MP2 correction energy = -0.203960 a.u. 
+MP2 total energy = -76.230759 a.u. 
+
+
+	C2H2
+====================
+
+Choose a TREXIO file:
+Nuclear repulsion energy = 24.775902 a.u. 
+Number of spin-up electrons: 7 
+Number of molecular orbitals: 38 
+Number of non-zero 2-electron integrals: 274911 
+Hartree-Fock energy = -76.825778 a.u. 
+MP2 correction energy = -0.260094 a.u. 
+MP2 total energy = -77.085873 a.u. 
+
+
+	CH4
+====================
+
+Choose a TREXIO file:
+Nuclear repulsion energy = 13.472035 a.u. 
+Number of spin-up electrons: 5 
+Number of molecular orbitals: 34 
+Number of non-zero 2-electron integrals: 177310 
+Hartree-Fock energy = -40.198673 a.u. 
+MP2 correction energy = -0.164007 a.u. 
+MP2 total energy = -40.362681 a.u. 
+
+
+	CO2
+====================
+
+Choose a TREXIO file:
+Nuclear repulsion energy = 58.286450 a.u. 
+Number of spin-up electrons: 11 
+Number of molecular orbitals: 42 
+Number of non-zero 2-electron integrals: 408156 
+Hartree-Fock energy = -187.650711 a.u. 
+MP2 correction energy = -0.488675 a.u. 
+MP2 total energy = -188.139385 a.u. 
+
+
+	H3COH
+=====================
+
+Choose a TREXIO file:
+Nuclear repulsion energy = 40.193443 a.u. 
+Number of spin-up electrons: 9 
+Number of molecular orbitals: 48 
+Number of non-zero 2-electron integrals: 692076 
+Hartree-Fock energy = -115.048416 a.u. 
+MP2 correction energy = -0.343091 a.u. 
+MP2 total energy = -115.391507 a.u. 
+
+
+	HCN
+=====================
+
+Choose a TREXIO file:
+Nuclear repulsion energy = 23.878820 a.u. 
+Number of spin-up electrons: 7 
+Number of molecular orbitals: 33 
+Number of non-zero 2-electron integrals: 157641 
+Hartree-Fock energy = -92.882947 a.u. 
+MP2 correction energy = -0.289275 a.u. 
+MP2 total energy = -93.172222 a.u. 
