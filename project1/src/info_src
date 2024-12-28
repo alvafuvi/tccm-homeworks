@@ -1,0 +1,3 @@
+Source directory with main program.
+
+Once built with cmake, the executable should be created here too.
