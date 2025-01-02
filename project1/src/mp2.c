@@ -41,13 +41,9 @@ void deallocate_4D(double ****array, size_t m, size_t n, size_t o) {
 
 
 // Open the trexio file
-trexio_t* open_file(trexio_exit_code rc){
+trexio_t* open_file(trexio_exit_code rc, char* filename){
 	trexio_t* trexio_file;
-	char filename[20]; 
 	
-
-	printf("Choose a TREXIO file:\n");
-	scanf("%s", &filename);
 
 	trexio_file = trexio_open(filename, 'r', TREXIO_AUTO, &rc);
 
@@ -164,6 +160,28 @@ void get_2e_integrals(trexio_exit_code rc, trexio_t* trexio_file,int64_t n_integ
 	}
 }
 
+void F_matrix(double**** F, int n_integrals, int32_t* index, double* value){
+	for (int n=0; n<n_integrals; n++){		 
+		int i = index[4*n+0];
+		int j = index[4*n+1];
+		int k = index[4*n+2];
+		int l = index[4*n+3]; 
+		
+		// Need to account for all 8-fold permutations
+
+		F[i][j][k][l] = value[n];
+		F[i][l][k][j] = value[n];
+		F[k][l][i][j] = value[n];
+		F[k][j][i][l] = value[n];
+		F[j][i][l][k] = value[n];
+		F[l][i][j][k] = value[n];
+		F[l][k][j][i] = value[n];
+		F[j][k][l][i] = value[n];
+		}
+}
+
+
+
 // Energy of molecular orbitals for MP2 calculation
 
 void get_mo_energy(trexio_exit_code rc, trexio_t* trexio_file, double* mo_energy){
@@ -179,11 +197,12 @@ void get_mo_energy(trexio_exit_code rc, trexio_t* trexio_file, double* mo_energy
 
 
 
-int main(){
+int main(int argc, char **argv){
 	// Start by defining some variables
 	
 	trexio_exit_code rc;
 	trexio_t* trexio_file; 
+	char* filename; 
 	double repulsion_energy;
 	int spin_up;
 	int Nocc;
@@ -194,9 +213,18 @@ int main(){
 	double hf_energy;
 	double mp2_energy = 0.0;
 
-	
+	// First check that TREXIO file is specified in the input
+
+	if (argc != 2){
+		printf("Input error. Correct usage as: ./mp2 [file.h5] \n");
+	}else{
+		filename = argv[1];
+	}
+
+
+
 	// Open the file
-	trexio_file = open_file(rc);
+	trexio_file = open_file(rc,filename);
 
 	
 	// Read nuclear repulsion energy
@@ -266,25 +294,7 @@ int main(){
 		}
 	}
 
-	for (int n=0; n<n_integrals; n++){		 
-		int i = index[4*n+0];
-		int j = index[4*n+1];
-		int k = index[4*n+2];
-		int l = index[4*n+3]; 
-		
-		// Need to account for all 8-fold permutations
-
-		F[i][j][k][l] = value[n];
-		F[i][l][k][j] = value[n];
-		F[k][l][i][j] = value[n];
-		F[k][j][i][l] = value[n];
-		F[j][i][l][k] = value[n];
-		F[l][i][j][k] = value[n];
-		F[l][k][j][i] = value[n];
-		F[j][k][l][i] = value[n];
-
-	}
-
+	F_matrix(F,n_integrals,index,value);
 
 	// Loop for core Hamiltonian energies (only diagonal elements <i|h|i>)
 
