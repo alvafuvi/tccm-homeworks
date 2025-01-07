@@ -19,16 +19,16 @@ First, it computes the distances between each pair of atoms, followed by calcula
 
 Subrutines and functions:
 
-read_Natoms :  read the number of atoms of the system and their coordinates and masses 
-compute_distances :  Calculates the pairwise distances between atoms.
-V: Computes the Lennard-Jones potential energy for the system.
-T: Computes the total kinetic energy based on atom velocities.
-total_energy: Computes the total energy (sum of potential and kinetic energy).
-compute_acc :  Computes the accelerations based on the interatomic forces using the Lennard-Jones potential.
-verlet_algorithm : performs the Verlet integration to iteratively update atomic positions and velocities. At each time step, computes and records the system's potential energy, kinetic energy, and total energy. Additionally, generates an output file containing the molecular dynamics trajectory, including atomic coordinates and energy values for visualization and analysis.
-itoa :  A helper function to convert an integer to a string (used in the trajectory file).
+- ```read_Natoms``` :  read the number of atoms of the system and their coordinates and masses 
+- ```compute_distances``` :  Calculates the pairwise distances between atoms.
+- ```V```: Computes the Lennard-Jones potential energy for the system.
+- ```T```: Computes the total kinetic energy based on atom velocities.
+- ```total_energy```: Computes the total energy (sum of potential and kinetic energy).
+- ```compute_acc``` :  Computes the accelerations based on the interatomic forces using the Lennard-Jones potential.
+- ```verlet_algorithm``` : performs the Verlet integration to iteratively update atomic positions and velocities. At each time step, computes and records the system's potential energy, kinetic energy, and total energy. Additionally, generates an output file containing the molecular dynamics trajectory, including atomic coordinates and energy values for visualization and analysis.
+- ```itoa``` :  A helper function to convert an integer to a string (used in the trajectory file).
+
  
-  
 
 Key Features:
 
