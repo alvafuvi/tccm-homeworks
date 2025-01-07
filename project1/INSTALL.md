@@ -14,7 +14,7 @@ Compiling with CMake
 
 For CMake compilation, locate yourself in the build directory and just execute the following commands
 
-    ~$ cmake ..
-    ~$ make
+     cmake ..
+     make
 
 The executable file (named mp2) should be created in the source directory.
